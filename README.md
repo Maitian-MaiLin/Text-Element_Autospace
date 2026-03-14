@@ -18,5 +18,4 @@
 * U+0009：制表符
 * U+00A0：不间断空格
 * 标记为 `.space-around` 的HTML元素（邻接的 `.space-around` 元素之间不能有空格）
-
-另外不对语言属性不是 `.space-around`
+* 语言属性不是 `ja` `zh` `yue` `wuu` `nan` 及其变体的 `.space-around` 元素
