@@ -1,6 +1,6 @@
 # Text-Element Autospace
 
-这是一个业余MediaWiki扩展，其实是在模仿CSS的text-autospace功能，但对象是行间元素（主要是图标）和文本。是给[Countryhumans中文百科](https://zh.countryhumans.wiki)这种大量使用图标同时其语言文字基本没有空格的wiki设计的。
+这是一个需求小众的业余MediaWiki扩展，其实是在模仿CSS的text-autospace功能，但对象是行间元素（主要是图标）和文本。是给[Countryhumans中文百科](https://zh.countryhumans.wiki)这种大量使用图标同时其语言文字基本没有空格的wiki设计的。
 
 渲染页面时在文本和 `.space-around` 元素间插入间距，这适用于没有空格的中文、日文等文字系统，避免用户直接复制或TextExtracts提取的中日文本中有多余的空格。此外用户不再必须为了排版在特定图标两侧添加空格。（毕竟新手可能不知道要这样做）
 
