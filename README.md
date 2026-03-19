@@ -2,7 +2,7 @@
 
 This is a niche MediaWiki extension designed for amateur use, essentially mimicking the functionality of CSS `text-autospace`, but targeting inline elements (primarily icons) and text. It was created for wikis like the [Chinese Countryhumans Wiki](https://zh.countryhumans.wiki), which extensively use icons alongside languages that typically lack spaces in their text.
 
-This extension inserts spacing between text and `.space-around` elements when rendering pages. This is particularly useful for writing systems like Chinese and Japanese, which do not use spaces, ensuring that copied text or extracts via [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts) do not contain unnecessary spaces. Additionally, it eliminates the necessary‌ need for users to manually add spaces around specific icons for proper formatting — something newcomers may not be aware of.
+This extension inserts spacing between text and `.space-around` elements when rendering page. This is particularly useful for writing systems like Chinese and Japanese, which do not use spaces, ensuring that copied text or extracts via [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts) do not contain unnecessary spaces. Additionally, it eliminates the necessary‌ need for users to manually add spaces around specific icons for proper formatting — something newcomers may not be aware of.
 
 ## Insertion Logic
 
