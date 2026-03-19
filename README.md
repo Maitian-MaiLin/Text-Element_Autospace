@@ -6,7 +6,7 @@ This extension inserts spacing between text and `.space-around` elements when re
 
 ## Insertion Logic
 
-Inside `.space-around` elements with language attributes set to `ja`, `zh`, `lzh`, `yue`, `wuu`, `nan`, `cdo`, `cpx`, `gan`, `hsn`, `hak` or their variants, a `.text-element-space` (containing a space, adjusted via CSS to be slightly narrower and not directly copyable) is inserted. Simultaneously, any adjacent spaces (`U+0020`) outside the `.space-around` element are removed. However, if a `.space-around` element is adjacent to specific characters or elements on one side, no action is taken on that side:
+Inside `.space-around` elements with language attributes set to `ja`, `zh`, `lzh`, `yue`, `wuu`, `nan`, `cdo`, `cpx`, `gan`, `hsn`, `hak` or their variants (Exclude `-latn`), a `.text-element-space` (containing a space, adjusted via CSS to be slightly narrower and not directly copyable) is inserted. Simultaneously, any adjacent spaces (`U+0020`) outside the `.space-around` element are removed. However, if a `.space-around` element is adjacent to specific characters or elements on one side, no action is taken on that side:
 
 * <code> • </code> (commonly used as a separator for inline lists, typographic spaces should not be removed)
 * <code> · </code> (same as above)
