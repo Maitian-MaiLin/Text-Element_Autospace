@@ -7,7 +7,12 @@ class TextElementAutospaceHooks {
 
     // 需要排版的语言名单
     private static array $targetLanguages = [
-        'ja', 'zh', 'yue', 'wuu', 'nan'
+		'ja', 'zh', 'lzh', 'yue', 'wuu', 'nan', 'cdo', 'cpx', 'gan', 'hsn', 'hak'
+    ];
+
+	// 需要排除的标记名单
+    private static array $excludedMarkers = [
+		'-latn'
     ];
 
     public static function onParserAfterTidy(Parser $parser, &$text) {
@@ -16,9 +21,7 @@ class TextElementAutospaceHooks {
         $text = $instance->processHtml($text);
     }
 
-    /**
-     * 一次遍历整个 DOM 树，处理 .space-around 元素
-     */
+    // 一次遍历整个 DOM 树，处理 .space-around 元素
     private function processHtml($html) {
         $dom = new DOMDocument();
         libxml_use_internal_errors(true);
@@ -41,9 +44,7 @@ class TextElementAutospaceHooks {
         return preg_replace('/^<!DOCTYPE.*?>|<\/?(html|body)>/i', '', $dom->saveHTML());
     }
 
-    /**
-     * 深度优先遍历 DOM 树
-     */
+    // 深度遍历 DOM 树
     private function traverseDom(DOMNode $node) {
         if ($node instanceof DOMElement) {
             if ($this->hasClass($node, 'space-around')) {
@@ -59,9 +60,7 @@ class TextElementAutospaceHooks {
         }
     }
 
-    /**
-     * 获取元素语言（继承属性或页面语言缓存）
-     */
+    // 获取元素语言（继承属性或页面语言缓存）
     private function getElementLanguage(DOMElement $element): ?string {
         if ($element->hasAttribute('lang')) return $element->getAttribute('lang');
 
@@ -74,20 +73,21 @@ class TextElementAutospaceHooks {
         return $this->pageLang;
     }
 
-    /**
-     * 判断是否为目标语言
-     */
+    // 判断是否为目标语言
     private function isTargetLanguage(?string $langCode): bool {
         if (!$langCode) return false;
+		foreach (self::$excludedMarkers as $marker) {
+        	if (strpos($langCode, $marker) !== false) {
+            	return false;
+        	}
+    	}
         foreach (self::$targetLanguages as $lang) {
             if ($langCode === $lang || str_starts_with($langCode, $lang . '-')) return true;
         }
         return false;
     }
 
-    /**
-     * 一次处理元素及左右边界，连续文本批量处理
-     */
+    // 一次处理元素及左右边界，连续文本批量处理
 	private static function processElement(DOMElement $element) {
     $doc = $element->ownerDocument;
     $spacerTemplate = $doc->createElement('span', ' ');
@@ -142,9 +142,7 @@ class TextElementAutospaceHooks {
     }
 	}
 
-    /**
-     * 特殊字符判断
-     */
+    // 特殊字符判断
     private static function isSpecialChar(string $char): bool {
         static $regex = null;
         if ($regex === null) {
