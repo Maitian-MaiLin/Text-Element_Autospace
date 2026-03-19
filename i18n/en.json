@@ -4,5 +4,5 @@
 			"Mitian MaiLin"
 		]
 	},
-	"text-element-autospace-desc": "When the page is rendered, insert spacer between the text or elements with the <code>.space-around</code> elements. This is applicable for text systems without spaces, such as Chinese and Japanese, to avoid extra spaces in the Chinese and Japanese text that users copy directly or be extracted by TextExtracts."
+	"text-element-autospace-desc": "Inserts spacing between text and .space-around elements when rendering page. This is particularly useful for writing systems like Chinese and Japanese, which do not use spaces, ensuring that copied text or extracts via TextExtracts do not contain unnecessary spaces."
 }
