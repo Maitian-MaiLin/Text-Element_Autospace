@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mitian MaiLin"
+		]
+	},
+	"text-element-autospace-desc": "渲染頁面時在文本或元素與<code>.space-around</code>元素間插入間距，這適用於沒有空格的中文、日文等文字系統，避免用戶直接複製或TextExtracts提取的中文、日文文本中有多餘的空格。"
+}

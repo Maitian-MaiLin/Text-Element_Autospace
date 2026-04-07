@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mitian MaiLin"
+		]
+	},
+	"text-element-autospace-desc": "Inserts spacing between text and .space-around elements when rendering page. This is particularly useful for writing systems like Chinese and Japanese, which do not use spaces."
+}

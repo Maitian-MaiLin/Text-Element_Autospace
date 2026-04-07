@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mitian MaiLin"
+		]
+	},
+	"text-element-autospace-desc": "ページのレンダリング時に、テキストまたは要素と <code>.space-around</code> 要素の間にスペースを挿入します。これは、スペースを使用しない中国語や日本語などの文字体系に適用され、ユーザーが直接コピーしたり、TextExtracts で抽出した際に中国語・日本語のテキストに余分な空白が含まれるのを防ぎます。"
+}

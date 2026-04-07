@@ -1,0 +1,23 @@
+{
+	"name": "Text-Element Autospace",
+	"author": "Maitian MaiLin",
+	"url": "https://github.com/Maitian-MaiLin/Text-Element_Autospace",
+	"descriptionmsg": "text-element-autospace-desc",
+	"version": "1.1",
+	"license-name": "MIT",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.35"
+	},
+	"MessagesDirs": {
+		"SecureLinkFixer": "i18n"
+	},
+	"AutoloadClasses": {
+		"TextElementAutospaceHooks": "includes/TextElementAutospaceHooks.php"
+	},
+	"Hooks": {
+		"ParserAfterTidy": "TextElementAutospaceHooks::onParserAfterTidy",
+		"BeforePageDisplay": "TextElementAutospaceHooks::onBeforePageDisplay"
+	},
+	"manifest_version": 2
+}
