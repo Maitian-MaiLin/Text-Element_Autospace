@@ -30,7 +30,7 @@ Inside `.space-around` elements with language attributes set to `ja`, `zh`, `lzh
 | `——&nbsp;[icon]text` | `——&nbsp;[icon_]text` | No insert spacers near special space
 | `[icon] text • [icon] text` | `[icon_]text • [icon_]text` | Keep ' • ' etc. and no insert spacers nearly
 | `（text）• [icon] text` | `（text）• [icon_]text` | Keep '）• ' etc. and no insert spacers nearly
-| `[icon][icon]` `[icon] [icon]` | `[icon][icon]` `[icon_][icon]` | No insert spacers between `.space-around` with out spaces
+| `[icon][icon]` `[icon] [icon]` | `[icon][icon]` `[icon_][icon]` | No insert spacers between `.space-around` without spaces
 | `<span lang="en">text in [icon] English.</span>` | *stay the same* | Only match the target language code
 | `<span lang="nan-latn">text in [icon] Hokkien (Latin).</span>` | *stay the same* | Exclude particular language extral code
 
