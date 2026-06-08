@@ -8,9 +8,8 @@
 
 在语言属性为 `ja` `zh` `lzh` `yue` `wuu` `nan` `cdo` `cpx` `gan` `hsn` `hak` 及其变体（不包括 `-latn`）的 `.space-around` 元素内侧插入 `.text-element-space`（内含空格，用CSS调整后稍窄且不能被直接复制），同时清理 `.space-around` 元素外侧邻接的空格（`U+0020`）。但在此之前如果 `.space-around` 元素一侧邻接有特定字符或元素时则不在该侧做任何操作：
 
-* ' • '（常用的横排列项分隔符，排版用的空号不应被移除）
-* ' · '（同上）
-* ' | '（同上）
+* 常用的项目分隔符：`•`, `·`, `|`
+* U+0000-U+001F: 控制字符（例如换行）
 * U+3000-U+3003：带留白的CJK标点符号（例如 `。` `、`）
 * U+3008-U+3011：带留白的CJK标点符号（例如 `《` `》` `【` `】`）
 * U+FF01-U+FF60：ASCII标点符号的全角变体（例如 `？` `！` `（` `）`）
@@ -20,7 +19,8 @@
 * 标记为 `.space-around` 的HTML元素（邻接的 `.space-around` 元素之间不能有空格）
 
 ## 示例
-`[图标]` 为类似 `<span class="icon space-around">[[File:Icon.png]]</span>` 这样的模板，`_` 表示作为 `[图标]` 的子元素，由该扩展生成的间距元素 `<span class="text-element-space"> </span>`。
+* `[图标]` 为类似 `<span class="icon space-around">[[File:Icon.png]]</span>` 这样的模板
+* `_` 表示作为 `[图标]` 的子元素，由该扩展生成的间距元素 `<span class="text-element-space"> </span>`。
 
 | 源代码 | 实际渲染 | 测试描述 |
 | ------ | ------ | -------- |
@@ -32,12 +32,14 @@
 | `[图标][图标]` `[图标] [图标]` | `[图标][图标]` `[图标_][图标]` | 在没有空格的情况下，不在 `.space-around` 之间插入spacer
 | `<span lang="en">标记为 [icon] 英文的文本</span>` | *保持不变* | 只匹配目标语言
 | `<span lang="nan-latn">标记为 [icon] 拉丁闽南文的文本</span>` | *保持不变* | 排除特定语言附加代码
+| `文本（文本） • 文本` | `文本（文本）• 文本` | 移除 `）` 和 `•` 之间的空格
+| `[图标]    文本` | *保持不变* | 只移除有且仅有一个空格的“空格”
 
 ## 间距元素
 只是套了CSS容器的普通空格。这样做是因为浏览器在渲染时可以清理堆叠的空格，并在换行时隐藏。
 ```
 .text-element-space {
-    word-spacing: -2px;
+    word-spacing: -1px;
     user-select: none;
 }
 ```

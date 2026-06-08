@@ -27,7 +27,7 @@ class TextElementAutospaceHooks {
     private static function processHtml(string $html, ?string $pageLang): string {
         $dom = new DOMDocument();
         libxml_use_internal_errors(true);
-        libxml_disable_entity_loader(true);
+        libxml_set_external_entity_loader(null);
         $dom->loadHTML('<?xml encoding="UTF-8">' . $html);
         $dom->encoding = 'UTF-8';
         libxml_clear_errors();
