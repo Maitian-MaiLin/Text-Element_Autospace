@@ -19,7 +19,7 @@
 * 标记为 `.space-around` 的HTML元素（邻接的 `.space-around` 元素之间不能有空格）
 
 ## 示例
-* `[图标]` 为类似 `<span class="icon space-around">[[File:Icon.png]]</span>` 这样的模板
+* `[图标]` 为类似 `<span class="icon space-around">[[File:Icon.png]]</span>` 这样的模板。
 * `_` 表示作为 `[图标]` 的子元素，由该扩展生成的间距元素 `<span class="text-element-space"> </span>`。
 
 | 源代码 | 实际渲染 | 测试描述 |
