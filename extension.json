@@ -3,14 +3,14 @@
 	"author": "Maitian MaiLin",
 	"url": "https://github.com/Maitian-MaiLin/Text-Element_Autospace",
 	"descriptionmsg": "text-element-autospace-desc",
-	"version": "1.1",
+	"version": "1.2",
 	"license-name": "MIT",
 	"type": "other",
 	"requires": {
 		"MediaWiki": ">= 1.35"
 	},
 	"MessagesDirs": {
-		"SecureLinkFixer": "i18n"
+		"TextElementAutospace": "i18n"
 	},
 	"AutoloadClasses": {
 		"TextElementAutospaceHooks": "includes/TextElementAutospaceHooks.php"
